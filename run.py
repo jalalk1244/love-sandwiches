@@ -1,6 +1,26 @@
 import gspread
 from google.oauth2.service_account import Credentials
 
+COLORS = {
+    "black": "\u001b[30;1m",
+    "red": "\u001b[31;1m",
+    "green": "\u001b[32m",
+    "yellow": "\u001b[33;1m",
+    "light-yellow": "\u001b[33m",
+    "blue": "\u001b[34;1m",
+    "magenta": "\u001b[35m",
+    "cyan": "\u001b[36m",
+    "white": "\u001b[37m",
+    "yellow-background": "\u001b[43m",
+    "black-background": "\u001b[0m",
+    "cyan-background": "\u001b[46;1m",
+    'green-background': '\u001b[42m',
+    'bright-black-background': '\u001b[40;1m',
+    'blackbb': '\u001b[40m',
+    "bold": "\u001b[1m"
+}
+
+
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
@@ -18,9 +38,9 @@ def get_sales_data():
     Get sales figures input from the user
     '''
     while True:
-        print('Pleas enter sales data from the last market.')
-        print('Data should be six numbers, seperated by commas.')
-        print('Example: 10,20,30,40,50,60\n')
+        print(f'{COLORS["black-background"]}Pleas enter sales data from the last market.')
+        print(f'{COLORS["bright-black-background"]}Data should be six numbers, seperated by commas.')
+        print(f'{COLORS["blackbb"]}Example: 10,20,30,40,50,60\n')
 
         data_str = input('Enter your data here:\n ')
 
